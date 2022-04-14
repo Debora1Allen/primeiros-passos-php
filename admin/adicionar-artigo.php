@@ -1,3 +1,12 @@
+<?php
+require '../conexao.php';
+require '../src/Artigo.php';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $artigo = new Artigo($mysql);
+    $artigo->adicionar($_POST['titulo'], $$_POST['conteudo']);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
