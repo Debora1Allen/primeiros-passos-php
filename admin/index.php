@@ -24,7 +24,7 @@ $artigos = $artigo->exibirTodos();
             <div id="artigo-admin">
                 <p>Primeiros passos com Spring</p>
                 <nav>
-                    <a class="botao" href="admin/editar-artigo.html?id=<?php echo $art['id']; ?>">Editar</a>
+                    <a class="botao" href="admin/editar-artigo.php?id=<?php echo $art['id']; ?>">Editar</a>
                     <a class="botao" href="admin/excluir-artigo.php">Excluir</a>
                 </nav>
             </div>
