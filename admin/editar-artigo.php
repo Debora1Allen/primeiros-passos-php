@@ -1,11 +1,18 @@
 <?php
-require '../conexao.php';
-require '../src/redireciona.php';
+
+require '../config.php';
 include '../src/Artigo.php';
+require '../src/redireciona.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $artigo = new Artigo($mysql);
+    $artigo->editar($_POST['id'], $_POST['titulo'], $_POST['conteudo']);
+
+    redireciona('/blog/admin/index.php');
+}
 
 $artigo = new Artigo($mysql);
 $art = $artigo->encontrarPorId($_GET['id']);
-redireciona('Location:/blog/admin/index.php');
 
 ?>
 
