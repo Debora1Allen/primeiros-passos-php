@@ -22,7 +22,7 @@ $artigos = $artigo->exibirTodos();
         <?php foreach ($artigos as $artigo) : ?>
             <h2>
                 <a href="artigo.php?id=<?php echo $artigo['id']; ?>">
-                    <?php echo $artigo['titulo']; ?>
+                    <?php echo nl2br($artigo['titulo']); ?>
                 </a>
             </h2>
             <p>
